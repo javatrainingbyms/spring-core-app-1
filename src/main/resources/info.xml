@@ -11,11 +11,65 @@
 	
 	<bean id="e1" class="com.ms.Employee">
 		<property name="eno" value="1001"/>
-		<property name="name" value="abcd"/>
+		<property name="name" value="abcd"/> 
+		<property name="addresses">
+			<map>
+				<entry key="temporary" value-ref="adr1"/>
+				<entry key="permanent" value-ref="adr2"/>
+			</map>	
+		</property>
+		
+		
+		
+		
+		
+		<property name="address" ref="adr1"/>
+		<property name="education">
+			<props>
+				<prop key="btech">davv</prop>
+				<prop key="mtech">rgpv</prop>
+				<prop key="phd">iitb</prop>
+			</props>
+		</property>
+		<property name="kids">
+			<map>
+				<entry key="kid-1" value="8"/>
+				<entry key="kid-2" value="12"/>
+				<entry key="kid-3" value="15"/>
+			</map>
+		</property>
+		<property name="emails">
+			<set>
+				<value>ab@gmail.com</value>
+				<value>ab@yahoo.com</value>
+				<value>ab@gmail.com</value>
+			</set>
+		</property>
+		<property name="projects">
+			<list>
+				<ref bean="proj1"/>
+				<ref bean="proj2"/>
+			</list>
+		</property>
 	</bean>
-	
-	
-	
+	<bean id="proj1" class="com.ms.Project">
+		<property name="code" value="pr101"/>
+		<property name="name" value="banking-app"/>
+	</bean>
+	<bean id="proj2" class="com.ms.Project">
+		<property name="code" value="pr102"/>
+		<property name="name" value="insurance-app"/>
+	</bean>
+	<bean id="adr1" class="com.ms.Address">
+		<property name="hno" value="5151"/>
+		<property name="street" value="mg-road"/> 
+		<property name="city" value="bhopal"/> 
+	</bean>
+	<bean id="adr2" class="com.ms.Address">
+		<property name="hno" value="6677"/>
+		<property name="street" value="ab-road"/> 
+		<property name="city" value="mumbai"/> 
+	</bean>
 
 </beans>
 
