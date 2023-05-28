@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	
+	<bean id="emp" class="com.ms.Employee">
+		<constructor-arg value="1001" name="eno"/>
+		<constructor-arg value="xyz" name="name"/>
+		<constructor-arg ref="adr1" name="address"/>
+		<constructor-arg type="java.util.Set">
+			<set>
+				<value>ab@yahoo.com</value>
+				<value>cd@gmail.com</value>
+			</set>
+		</constructor-arg>
+	</bean>
+	<bean id="adr1" class="com.ms.Address">
+		<property name="hno" value="5151"/>
+		<property name="street" value="mg-road"/> 
+		<property name="city" value="bhopal"/> 
+	</bean>
+	<bean id="adr2" class="com.ms.Address">
+		<property name="hno" value="6677"/>
+		<property name="street" value="ab-road"/> 
+		<property name="city" value="mumbai"/> 
+	</bean>
+
+</beans>
+

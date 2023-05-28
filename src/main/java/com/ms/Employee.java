@@ -9,16 +9,44 @@ import lombok.Data;
 import lombok.ToString;
 
 @Data
-@ToString(exclude = { "address", "name", "emails", "kids","education","projects" })
+@ToString(exclude = { "kids","education","projects" })
 public class Employee {
 	private int eno;
 	private String name;
 	private Address address;
 	private Set<String> emails;
+	private List<String> hobbies;
 	private Map<String, Integer> kids;
 	private Properties education;// degree key,university/board value (btech davv, mtech iit, phd iist)
 	private List<Project> projects;
 	private Map<String,Address> addresses;
+	
+	public Employee(int eno, String name, Address address) {
+		System.out.println("three arg constructor...");
+		this.eno = eno;
+		this.name = name;
+		this.address = address;
+	}
+
+	public Employee() {
+		System.out.println("zero arg constructor...");
+	}
+
+	public Employee(int eno, String name, Address address, Set<String> emails) {
+		System.out.println("four args constructor (set)....");
+		this.eno = eno;
+		this.name = name;
+		this.address = address;
+		this.emails = emails;
+	}
+
+	public Employee(int eno, String name, Address address, List<String> hobbies) {
+		System.out.println("four args constructor (list)....");
+		this.eno = eno;
+		this.name = name;
+		this.address = address;
+		this.hobbies = hobbies;
+	}
 	
 	
 }

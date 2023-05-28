@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config/>
+	<context:component-scan base-package="com.ms"/>
+	
+	
+	<bean id="student" class="com.ms.Student">
+		<property name="rno" value="1001"/>
+		<property name="name" value="xyz"/>
+	</bean>	
+		
+	<bean id="proj1" class="com.ms.Project">
+		<property name="code" value="pr101"/>
+		<property name="name" value="banking-app"/>
+	</bean>
+	<bean id="proj2" class="com.ms.Project">
+		<property name="code" value="pr102"/>
+		<property name="name" value="insurance-app"/>
+	</bean>
+	<bean id="address" class="com.ms.Address">
+		<property name="hno" value="5151"/>
+		<property name="street" value="mg-road"/> 
+		<property name="city" value="bhopal"/> 
+	</bean>
+	<bean id="address2" class="com.ms.Address">
+		<property name="hno" value="6677"/>
+		<property name="street" value="ab-road"/> 
+		<property name="city" value="mumbai"/> 
+	</bean>
+	 	
+	
+	
+
+
+</beans>
+
